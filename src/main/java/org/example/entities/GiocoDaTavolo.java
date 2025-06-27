@@ -10,6 +10,22 @@ public class GiocoDaTavolo extends Gioco {
         this.numGiocatori = numGiocatori;
     }
 
+    public int getNumGiocatori() {
+        return numGiocatori;
+    }
+
+    public void setNumGiocatori(int numGiocatori) {
+        this.numGiocatori = numGiocatori;
+    }
+
+    public int getDurataMinuti() {
+        return durataMinuti;
+    }
+
+    public void setDurataMinuti(int durataMinuti) {
+        this.durataMinuti = durataMinuti;
+    }
+
     @Override
     public String toString() {
         return "GiocoDaTavolo{" +
