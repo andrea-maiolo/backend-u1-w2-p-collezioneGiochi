@@ -6,6 +6,7 @@ import org.example.exceptions.GiocoInCollezioneException;
 import org.example.exceptions.RicercaFallitaException;
 
 import java.util.HashMap;
+import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
 
@@ -17,6 +18,7 @@ public class Collezione {
             throw new GiocoInCollezioneException("gioco gia presente nella collezione");
         }
         listaCollezione.put(gioco.getId(), gioco);
+        System.out.println("gioco aggiunto");
         //da capire come farlo fare all utente
     }
 
@@ -36,6 +38,7 @@ public class Collezione {
             throw new ErroreRimozioneException("l' id fornito e sbagliato");
         }
         listaCollezione.remove(id);
+        System.out.println("gioco rimosso");
     }
 
     public void aggiornaGioco(int id) {
@@ -65,6 +68,13 @@ public class Collezione {
         }
 
         return listaDiRitorno;
+    }
+
+    public IntSummaryStatistics statisticheCollezione() {
+        IntSummaryStatistics stats = listaCollezione.values().stream()
+                .mapToInt(gioco -> gioco.getPrezzo()).summaryStatistics();
+        System.out.println(stats);
+        return stats;
     }
 
 
