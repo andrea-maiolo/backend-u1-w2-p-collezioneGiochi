@@ -1,16 +1,14 @@
 package org.example.entities;
 
-import java.util.Random;
 
 public abstract class Gioco {
-    Random random = new Random();
     private int id;
     private String titolo;
     private int annoPubblicazione;
     private int prezzo;
 
-    public Gioco(String titolo, int annoPubblicazione, int prezzo) {
-        this.id = random.nextInt(1, 10000);
+    public Gioco(String titolo, int annoPubblicazione, int prezzo, int id) {
+        this.id = id;
         this.titolo = titolo;
         this.annoPubblicazione = annoPubblicazione;
         this.prezzo = prezzo;

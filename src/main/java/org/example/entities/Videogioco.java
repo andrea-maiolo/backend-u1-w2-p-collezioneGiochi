@@ -7,8 +7,8 @@ public class Videogioco extends Gioco {
     private int durataOre;
     private Genere genere;
 
-    public Videogioco(String titolo, int annoPubblicazione, int prezzo, String piattaforma, int durataOre, Genere genere) {
-        super(titolo, annoPubblicazione, prezzo);
+    public Videogioco(String titolo, int annoPubblicazione, int prezzo, int id, String piattaforma, int durataOre, Genere genere) {
+        super(titolo, annoPubblicazione, prezzo, id);
         this.piattaforma = piattaforma;
         this.durataOre = durataOre;
         this.genere = genere;

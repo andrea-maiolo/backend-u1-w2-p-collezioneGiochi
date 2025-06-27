@@ -1,10 +1,12 @@
 package org.example.entities;
 
+import org.example.exceptions.ErroreRicerca;
 import org.example.exceptions.ErroreRimozioneException;
 import org.example.exceptions.GiocoInCollezioneException;
 import org.example.exceptions.RicercaFallitaException;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Collezione {
@@ -15,6 +17,7 @@ public class Collezione {
             throw new GiocoInCollezioneException("gioco gia presente nella collezione");
         }
         listaCollezione.put(gioco.getId(), gioco);
+        //da capire come farlo fare all utente
     }
 
     public Map<Integer, Gioco> getListaCollezione() {
@@ -34,4 +37,23 @@ public class Collezione {
         }
         listaCollezione.remove(id);
     }
+
+    public void aggiornaGioco(int id) {
+        System.out.println("il gioco cercato e: " + listaCollezione.get(id));
+        //da finire
+
+    }
+
+    public List<Gioco> cercaPerPrezzo(int prezzoDiRicerca) {
+        List<Gioco> listaDiRitorno = listaCollezione.values().stream()
+                .filter(gioco -> gioco.getPrezzo() <= prezzoDiRicerca)
+                .toList();
+        if (listaDiRitorno.isEmpty()) {
+            throw new ErroreRicerca("nessun gioco corrisponde al prezzo inserito");
+        }
+
+        return listaDiRitorno;
+    }
+
+
 }
