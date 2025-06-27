@@ -39,31 +39,14 @@ public class Application {
 
 
         Collezione c1 = new Collezione();
-        //c1.aggiungiACollezione(vg1);
-        //c1.aggiungiACollezione(gt1);
-        //c1.aggiungiACollezione(vg4);
-        //c1.aggiungiACollezione(gt3);
-
-        //System.out.println(c1.getListaCollezione());
-
         // c1.aggiungiACollezione(vg1);
+//        c1.aggiungiACollezione(gt1);
+//        //  c1.aggiungiACollezione(vg4);
+//        c1.aggiungiACollezione(gt3);
+//        //  c1.aggiungiACollezione(vg2);
 
-        //System.out.println(c1.ricercaPerId(4));
 
-        //c1.rimuoviDallaCollezione(3);
-
-        //System.out.println(c1.getListaCollezione());
-
-        //c1.aggiornaGioco(gt1.getId());
-
-        // System.out.println("gioco per prezzo");
-        //System.out.println(c1.cercaPerPrezzo(40));
-
-        //System.out.println(c1.cercaPerPrezzo(1));
-        //System.out.println(c1.cercaPerNumeroGiocatori(8));
-        //System.out.println(c1.cercaPerNumeroGiocatori(3));
-
-        //c1.statisticheCollezione();
+//        c1.statisticheCollezione();
 
 
         System.out.println("crea una collezione di giochi!");

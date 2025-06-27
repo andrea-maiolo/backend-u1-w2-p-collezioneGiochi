@@ -152,11 +152,24 @@ public class Collezione {
         return listaDiRitorno;
     }
 
-    public IntSummaryStatistics statisticheCollezione() {
+    public void statisticheCollezione() {
         IntSummaryStatistics stats = listaCollezione.values().stream()
                 .mapToInt(gioco -> gioco.getPrezzo()).summaryStatistics();
-        System.out.println(stats);
-        return stats;
+        //da qui prendo maxprice e avarege
+        //mi serve numoro giochi da tavolo e numero video
+        long numVideo = listaCollezione.values().stream()
+                .filter(gioco -> gioco instanceof Videogioco)
+                .count();
+
+        long numGioT = listaCollezione.values().stream()
+                .filter(gioco -> gioco instanceof GiocoDaTavolo)
+                .count();
+
+        System.out.println("gioco piu costoso: " + stats.getMax() +
+                "media costo giochi: " + stats.getAverage() +
+                "numero videogiochi: " + numVideo +
+                "numero giochi da tavolo: " + numGioT
+        );
     }
 
 
