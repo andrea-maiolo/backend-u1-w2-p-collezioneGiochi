@@ -7,8 +7,8 @@ public class Videogioco extends Gioco {
     private int durataOre;
     private Genere genere;
 
-    public Videogioco(String titolo, int annoPubblicazione, int prezzo, String piattaforma, int durataOre, Genere genere) {
-        super(titolo, annoPubblicazione, prezzo);
+    public Videogioco(String titolo, int annoPubblicazione, int prezzo, int id, String piattaforma, int durataOre, Genere genere) {
+        super(titolo, annoPubblicazione, prezzo, id);
         this.piattaforma = piattaforma;
         this.durataOre = durataOre;
         this.genere = genere;
@@ -41,13 +41,13 @@ public class Videogioco extends Gioco {
     @Override
     public String toString() {
         return "Videogioco{" +
-                "id=" + id +
-                ", piattaforma='" + piattaforma + '\'' +
-                ", durataOre=" + durataOre +
-                ", genere='" + genere + '\'' +
-                ", titolo='" + titolo + '\'' +
-                ", annoPubblicazione=" + annoPubblicazione +
-                ", prezzo=" + prezzo +
+                "piattaforma=" + this.getPiattaforma() +
+                ", durataOre=" + this.getDurataOre() +
+                ", prezzo=" + this.getPrezzo() +
+                ", annoPubblicazione=" + this.getAnnoPubblicazione() +
+                ", titolo='" + this.getTitolo() + '\'' +
+                ", id=" + this.getId() +
+                ", genere=" + this.getGenere() +
                 '}';
     }
 }
