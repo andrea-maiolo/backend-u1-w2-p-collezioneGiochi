@@ -47,7 +47,13 @@ public class Application {
         int idRicerca = vg1.getId();
 
         System.out.println(c1.ricercaPerId(idRicerca));
-        System.out.println(c1.ricercaPerId(4));
+        //System.out.println(c1.ricercaPerId(4));
+
+        c1.rimuoviDallaCollezione(idRicerca);
+
+        //c1.rimuoviDallaCollezione(3);
+
+        System.out.println(c1.getListaCollezione());
 
     }
 }

@@ -1,5 +1,6 @@
 package org.example.entities;
 
+import org.example.exceptions.ErroreRimozioneException;
 import org.example.exceptions.GiocoInCollezioneException;
 import org.example.exceptions.RicercaFallitaException;
 
@@ -25,5 +26,12 @@ public class Collezione {
             throw new RicercaFallitaException("l' id fornito e sbagliato o il gioco non e presente nella collezione");
         }
         return listaCollezione.get(id);
+    }
+
+    public void rimuoviDallaCollezione(int id) {
+        if (!listaCollezione.containsKey(id)) {
+            throw new ErroreRimozioneException("l' id fornito e sbagliato");
+        }
+        listaCollezione.remove(id);
     }
 }
