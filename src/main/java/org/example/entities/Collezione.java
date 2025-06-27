@@ -1,6 +1,7 @@
 package org.example.entities;
 
 import org.example.exceptions.GiocoInCollezioneException;
+import org.example.exceptions.RicercaFallitaException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,6 +21,9 @@ public class Collezione {
     }
 
     public Gioco ricercaPerId(int id) {
+        if (!listaCollezione.containsKey(id)) {
+            throw new RicercaFallitaException("l' id fornito e sbagliato o il gioco non e presente nella collezione");
+        }
         return listaCollezione.get(id);
     }
 }
