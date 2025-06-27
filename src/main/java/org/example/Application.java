@@ -56,6 +56,8 @@ public class Application {
         System.out.println(c1.cercaPerPrezzo(40));
 
         //System.out.println(c1.cercaPerPrezzo(1));
+        System.out.println(c1.cercaPerNumeroGiocatori(8));
+        //System.out.println(c1.cercaPerNumeroGiocatori(3));
 
     }
 }

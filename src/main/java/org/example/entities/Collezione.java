@@ -46,10 +46,22 @@ public class Collezione {
 
     public List<Gioco> cercaPerPrezzo(int prezzoDiRicerca) {
         List<Gioco> listaDiRitorno = listaCollezione.values().stream()
-                .filter(gioco -> gioco.getPrezzo() <= prezzoDiRicerca)
+                .filter(gioco -> gioco.getPrezzo() < prezzoDiRicerca)
                 .toList();
         if (listaDiRitorno.isEmpty()) {
             throw new ErroreRicerca("nessun gioco corrisponde al prezzo inserito");
+        }
+
+        return listaDiRitorno;
+    }
+
+    public List<Gioco> cercaPerNumeroGiocatori(int numeroGiocatori) {
+        List<Gioco> listaDiRitorno = listaCollezione.values().stream()
+                .filter(gioco -> gioco instanceof GiocoDaTavolo)
+                .filter(giocoT -> ((GiocoDaTavolo) giocoT).getNumGiocatori() <= numeroGiocatori)
+                .toList();
+        if (listaDiRitorno.isEmpty()) {
+            throw new ErroreRicerca("nessun gioco trovato con il parametro numero giocatori");
         }
 
         return listaDiRitorno;
