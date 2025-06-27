@@ -19,10 +19,6 @@ public class Collezione {
         //da capire come farlo fare all utente
     }
 
-    public Map<Integer, Gioco> getListaCollezione() {
-        return listaCollezione;
-    }
-
     public Gioco ricercaPerId(int id) {
         if (!listaCollezione.containsKey(id)) {
             throw new RicercaFallitaException("l' id fornito e sbagliato o il gioco non e presente nella collezione");
@@ -39,6 +35,9 @@ public class Collezione {
     }
 
     public void aggiornaGioco(int id) {
+        if (!listaCollezione.containsKey(id)) {
+            throw new ErroreMain("nessun gioco con questo id");
+        }
         System.out.println("il gioco cercato e: " + listaCollezione.get(id));
         Gioco currentGioco = listaCollezione.get(id);
         System.out.println("cosa vuoi modificare? 1 per titolo" +
@@ -153,6 +152,10 @@ public class Collezione {
     }
 
     public void statisticheCollezione() {
+        if (listaCollezione.isEmpty()) {
+            throw new ErroreMain("collezione vuota");
+        }
+
         IntSummaryStatistics stats = listaCollezione.values().stream()
                 .mapToInt(gioco -> gioco.getPrezzo()).summaryStatistics();
         //da qui prendo maxprice e avarege
@@ -166,9 +169,9 @@ public class Collezione {
                 .count();
 
         System.out.println("gioco piu costoso: " + stats.getMax() +
-                "media costo giochi: " + stats.getAverage() +
-                "numero videogiochi: " + numVideo +
-                "numero giochi da tavolo: " + numGioT
+                " media costo giochi: " + stats.getAverage() +
+                " numero videogiochi: " + numVideo +
+                " numero giochi da tavolo: " + numGioT
         );
     }
 

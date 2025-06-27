@@ -66,7 +66,7 @@ public class Application {
 
             switch (userInputMetodo) {
                 case (1):
-                    System.out.println("crea un gioco, 1 per videogiochi 2 per gichi da taavol");
+                    System.out.println("crea un gioco, 1 per videogiochi 2 per gichi da taavolo, altro torna indietro ");
                     int userInput = Integer.parseInt(scanner.nextLine());
                     if (userInput == 1) {
                         System.out.println("per creare un videogioco ho bisogno di un titolo");
